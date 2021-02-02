@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Modal from '../../components/UI/Modal/Modal';
-import Aux from '../Aux/Aux';
+import Aux from '../_Aux/_Aux';
 import useHttpErrorHandler from '../../hooks/http-error-handler';
 
 const withErrorHandler = (WrappedComponent, axios) => {

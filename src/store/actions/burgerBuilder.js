@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes';
-import axios from '../../axios-orders';
+// import axios from '../../axios-orders';
 
 export const addIngredient = ( name ) => {
     return {
@@ -30,12 +30,17 @@ export const fetchIngredientsFailed = () => {
 
 export const initIngredients = () => {
     return dispatch => {
-        axios.get( 'https://react-hooks-update.firebaseio.com/ingredients.json' )
-            .then( response => {
-               dispatch(setIngredients(response.data));
-            } )
-            .catch( error => {
-                dispatch(fetchIngredientsFailed());
-            } );
+       dispatch(setIngredients(
+           {salad:1, bacon:1, cheese:1, meat:1}
+       ));
     };
+    // return dispatch => {
+    //     axios.get( 'https://react-hooks-update.firebaseio.com/ingredients.json' )
+    //         .then( response => {
+    //            dispatch(setIngredients({response.data}));
+    //         } )
+    //         .catch( error => {
+    //             dispatch(fetchIngredientsFailed());
+    //         } );
+    // };
 };
